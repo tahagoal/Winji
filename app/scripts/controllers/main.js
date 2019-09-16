@@ -10,13 +10,8 @@
 angular.module('winjiApp')
   .controller('MainCtrl', function ($scope) {
 
-    $scope.done = function(){
+    $scope.done = function () {
       console.log("AEHAHEHAH");
     }
 
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
   });
