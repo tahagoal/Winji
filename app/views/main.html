@@ -1,38 +1,156 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+<header class="header">
+  <nav class="navbar navbar-default container">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand</a>
+      </div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              <i class="fas fa-th-list"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-circle"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-center">
+          <li>
+            <a href="#">How it works
+            </a>
+          </li>
+          <li>
+            <a href="#">Explore</a>
+          </li>
+          <li class="active">
+            <a href="#">My Contests</a>
+          </li>
+          <li>
+            <a href="#">My Pins</a>
+          </li>
+          <li>
+            <button data-toggle="modal" data-target="#createModal" class="btn btn-pink">
+              <i class="fas fa-plus"></i>Create
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div>
+  <section class="course-details">
+    <div class="row mar-rzero">
+      <div class="col-md-7">
+        <div class="course-title bg-fade">
+          <h2>
+            Creative Math Contest
+          </h2>
+        </div>
+        <div class="course-desc bg-fade2">
+          <h5>
+            This Contest is about bla bla bla bla, bla bla This Contest is about bla bla bla bla, bla bla
+          </h5>
+        </div>
+        <div class="one-line-det m-top-20">
+          <div class="inner-item border-rw">
+            <img src="images/compare.png" width="30">
+            Default theme
+          </div>
+          <div class="inner-item border-rw">
+            <img src="images/compare.png" width="30">
+            32 Players
+          </div>
+          <div class="inner-item border-rw">
+            <img src="images/compare.png" width="30">
+            12 Questions
+          </div>
+          <div class="inner-item">
+            <img src="images/compare.png" width="30">
+            4 Courses
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-1">
+        <div class="course-publish">
+          <button class="btn btn-publish">
+            <i class="fas fa-rocket"></i> PUBLISH
+          </button>
+          <button class="btn btn-more">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="questions-list">
+    <div class="container">
+      <form class="form-inline search-form" role="form">
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" id="inputSuccess4">
+          <i class="fas fa-search"></i>
+        </div>
+      </form>
+      <div class="cards-list m-top-20">
+        <div class="question-card row zer-mar">
+          <div class="col-md-1 col-xs-2 question-no">
+            <h2 class="text-center">
+            Q.1
+            </h2>
+            <img src="images/rotate.png" width="80%" class="center">
+          </div>
+          <div class="col-md-11 col-xs-10 question-details">
+            <h3>
+              What is the area of the shaded region?
+            </h3>
+            <div class="lower-card">
+              <div class="border-right">
+                Easy
+              </div>
+              <div>
+                10 scores
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+<nav class="btns-container">
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+  <a href="#" class="buttons" tooltip="Google+"></a>
 
+  <a href="#" class="buttons" tooltip="Twitter"></a>
+
+  <a href="#" class="buttons" tooltip="Facebook"></a>
+
+  <a class="buttons" tooltip="Share" href="#"></a>
+
+</nav>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="createModalLabel">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
