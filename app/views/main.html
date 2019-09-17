@@ -3,8 +3,8 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-          aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -101,28 +101,28 @@
     <div class="container">
       <form class="form-inline search-form" role="form">
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" id="inputSuccess4">
+          <input type="text" ng-model="searchQuestion" class="form-control" id="inputSuccess4">
           <i class="fas fa-search"></i>
         </div>
       </form>
       <div class="cards-list m-top-20">
-        <div class="question-card row zer-mar">
+        <div class="question-card row zer-mar" ng-repeat="question in questions | filter:searchQuestionFilter track by $index" ng-class="{'active': question.active}">
           <div class="col-md-1 col-xs-2 question-no">
             <h2 class="text-center">
-            Q.1
+              Q.{{$index + 1}}
             </h2>
             <img src="images/rotate.png" width="80%" class="center">
           </div>
           <div class="col-md-11 col-xs-10 question-details">
             <h3>
-              What is the area of the shaded region?
+              {{question.title}}
             </h3>
             <div class="lower-card">
               <div class="border-right">
-                Easy
+                {{question.Difficulty}}
               </div>
               <div>
-                10 scores
+                {{question.Scores}} scores
               </div>
             </div>
           </div>
@@ -146,21 +146,93 @@
 </nav>
 
 <!-- Modal -->
-<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="createModalLabel">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <div>
+          <h3 class="text-center">Choose question type</h3>
+          <p class="text-center">Enjoy adding from variety of question types or even import from your question banks</p>
+        </div>
+        <div class="center m-top-20">
+          <div class="mcq-ques" ng-class="{'active':mcq}" ng-click="mcq = true; boolq=false">
+            <i class="fas fa-check-double center"></i>
+            <h4 class="text-center">MCQ</h4>
+          </div>
+          <div class="bool-ques" ng-class="{'active':boolq}" ng-click="mcq = false; boolq=true">
+            <i class="fas fa-check-double center"></i>
+            <h4 class="text-center">True/False</h4>
+          </div>
+        </div>
+
+        <div class="question-part">
+          <form class="question-form" role="form" ng-show="mcq">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Question" ng-model="questionmcq.title" id="inputSuccess4">
+            </div>
+            <div class="form-group choices">
+              <p>Choices</p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="choice" id="choice1" value="one" checked>
+                <label class="form-check-label" for="choice1">
+                    <input type="text" class="form-control" placeholder="First Choice" id="fst-choice">
+                </label>
+              </div>
+              <div class="form-check margin-top10">
+                <input class="form-check-input" type="radio" name="choice" id="choice2" value="two">
+                <label class="form-check-label" for="choice2">
+                  <input type="text" class="form-control" placeholder="Second Choice" id="snd-choice">
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <p>Hard</p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" ng-model="questionmcq.Difficulty" name="Questiondiff" id="Questiondiff1" value="Hard">
+                <label class="form-check-label" for="Questiondiff1">
+                  Hard
+                </label>
+              </div>
+              <div class="form-check margin-left20">
+                <input class="form-check-input" type="radio" ng-model="questionmcq.Difficulty" name="Questiondiff" id="Questiondiff2" value="Easy">
+                <label class="form-check-label" for="Questiondiff2">
+                  Easy
+                </label>
+              </div>
+            </div>
+          </form>
+
+          <form class="question-form" role="form" ng-show="boolq">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="questionbool.title" placeholder="Question" id="inputSuccess4">
+            </div>
+            <div class="form-group answers m-top-20">
+              <p>Answers</p>
+              <div class="form-check m-top-20">
+                <input class="form-check-input" type="radio" name="boolean" id="truechoice" value="true">
+                <label class="form-check-label" for="truechoice">
+                  True
+                </label>
+              </div>
+              <div class="form-check m-top-20">
+                <input class="form-check-input" type="radio" name="boolean" id="falsechoice" value="false">
+                <label class="form-check-label" for="falsechoice">
+                  False
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" ng-click="done()">Save changes</button>
+        <button type="button" class="btn btn-purble" ng-click="AddQuestion()" data-dismiss="modal">Add</button>
       </div>
     </div>
   </div>
