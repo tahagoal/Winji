@@ -82,7 +82,7 @@ body{
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
   border-radius: 30px;
-  background-color: #e7e7e730;
+  background-color: rgba(221, 221, 221, 0.4);
   color: white;
 }
 .navbar-center{
@@ -90,6 +90,7 @@ body{
   margin: 0 auto;
   display: table;
   table-layout: fixed;
+  margin-top: 7px;
 }
 .btn.btn-pink{
   background: #ff759b;
@@ -108,7 +109,7 @@ body{
   bottom: 50px;
   position: fixed;
   margin: 10px;
-  right: 0px;
+  right: 15px;
 }
 .buttons {
   box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 
@@ -154,28 +155,35 @@ body{
 .buttons:nth-last-child(1) {
   -webkit-transition-delay: 25ms;
           transition-delay: 25ms;
-  background-image: url('https://cbwconline.com/IMG/Share.svg');
+  background-image: url('../images/plus.png');
   background-size: contain;
 }
 
 .buttons:not(:last-child):nth-last-child(2) {
   -webkit-transition-delay: 50ms;
           transition-delay: 20ms;
-  background-image: url('https://cbwconline.com/IMG/Facebook-Flat.png');
+  background-image: url('../images/right-01.png');
   background-size: contain;
 }
 
 .buttons:not(:last-child):nth-last-child(3) {
   -webkit-transition-delay: 75ms;
           transition-delay: 40ms;
-  background-image: url('https://cbwconline.com/IMG/Twitter-Flat.png');
+          background-image: url('../images/right-01.png');
   background-size: contain;
 }
 
 .buttons:not(:last-child):nth-last-child(4) {
   -webkit-transition-delay: 100ms;
           transition-delay: 60ms;
-  background-image: url('https://cbwconline.com/IMG/Google%20Plus.svg');
+          background-image: url('../images/right-01.png');
+  background-size: contain;
+}
+
+.buttons:not(:last-child):nth-last-child(5) {
+  -webkit-transition-delay: 100ms;
+          transition-delay: 60ms;
+          background-image: url('../images/right2-01.png');
   background-size: contain;
 }
 
@@ -205,7 +213,19 @@ body{
   opacity: 1;
 }
 
-
+.navbar-brand{
+  padding: 0px;
+  display: flex;
+}
+.navbar-brand p{
+  font-size: 20px;
+  color: white;
+  display: grid;
+  margin: auto;
+}
+.navbar-right i{
+  font-size: 25px;
+}
 
 .bg-fade{
   background: rgba(255,255,255,0.4);
@@ -287,13 +307,14 @@ body{
   color: #401a3e;
 }
 .questions-list .container{
-  min-height: 500px;
+  min-height: 570px;
 }
 .questions-list .cards-list .question-card{
   background: white;
   border-radius: 30px;
   margin-bottom: 30px;
   overflow: hidden;
+  display: flex;
 }
 .questions-list .cards-list .question-card.active{
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 15px;
@@ -461,6 +482,27 @@ body{
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+
+  .questions-list .cards-list .question-card.active {
+    transform: scale(1.02);
+  }
+
+  .navbar-nav > li > a {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .btn.btn-pink{
+    padding: 10px;
+  }
+
+  .course-title, .course-desc{
+    padding-left: 100px;
+  }
+
+  .one-line-det{
+    margin-top: 10px;
+  }
 
   /* Remove the padding we set earlier */
   .header,

@@ -15,13 +15,17 @@ angular.module('winjiApp')
     $scope.searchQuestionFilter = '';
 
     $scope.$watch('searchQuestion', function (newValue, oldValue, scope) {
-      if(newValue.length > 1){
+      if (newValue.length > 1) {
         $scope.searchQuestionFilter = newValue;
       }
-      else{
+      else {
         $scope.searchQuestionFilter = '';
       }
     });
+
+    $scope.init = function () {
+      $scope.start();
+    }
 
     $scope.questions = [
       {
@@ -42,31 +46,40 @@ angular.module('winjiApp')
       },
     ]
 
-    $scope.questionmcq = {
-      title: '',
-      Type: 'MCQ',
-      Icon: "images/rotate.png",
-      Difficulty: '',
-      Scores: 10,
-      active: false
-    }
+    $scope.start = function() {
+      $scope.questionmcq = {
+        title: '',
+        Type: 'MCQ',
+        Icon: "images/rotate.png",
+        Difficulty: '',
+        Scores: 10,
+        active: false
+      }
+  
+      $scope.questionbool = {
+        title: '',
+        Type: 'True/False',
+        Icon: "images/rotate.png",
+        Difficulty: 'Easy',
+        Scores: 10,
+        active: false
+      }
 
-    $scope.questionbool = {
-      title: '',
-      Type: 'True/False',
-      Icon: "images/rotate.png",
-      Difficulty: 'Easy',
-      Scores: 10,
-      active: false
+      $scope.choice1 = '';
+      $scope.choice2 = '';
     }
 
     $scope.AddQuestion = function () {
-      if($scope.mcq){
+      if ($scope.mcq) {
         $scope.questions.push($scope.questionmcq);
+        $scope.start();
       }
-      else{
+      else {
         $scope.questions.push($scope.questionbool);
+        $scope.start();
       }
     }
+
+    $scope.init();
 
   });

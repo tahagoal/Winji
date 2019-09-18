@@ -10,7 +10,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Brand</a>
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" width="60">
+          <p>WinjiContent</p>
+        </a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -51,95 +54,97 @@
   </nav>
 </header>
 
-<div>
-  <section class="course-details">
-    <div class="row mar-rzero">
-      <div class="col-md-7">
-        <div class="course-title bg-fade">
-          <h2>
-            Creative Math Contest
-          </h2>
-        </div>
-        <div class="course-desc bg-fade2">
-          <h5>
-            This Contest is about bla bla bla bla, bla bla This Contest is about bla bla bla bla, bla bla
-          </h5>
-        </div>
-        <div class="one-line-det m-top-20">
-          <div class="inner-item border-rw">
-            <img src="images/compare.png" width="30">
-            Default theme
-          </div>
-          <div class="inner-item border-rw">
-            <img src="images/compare.png" width="30">
-            32 Players
-          </div>
-          <div class="inner-item border-rw">
-            <img src="images/compare.png" width="30">
-            12 Questions
-          </div>
-          <div class="inner-item">
-            <img src="images/compare.png" width="30">
-            4 Courses
-          </div>
-        </div>
+<section class="course-details">
+  <div class="row mar-rzero">
+    <div class="col-sm-7">
+      <div class="course-title bg-fade">
+        <h2>
+          Creative Math Contest
+        </h2>
       </div>
-      <div class="col-md-4 col-md-offset-1">
-        <div class="course-publish">
-          <button class="btn btn-publish">
-            <i class="fas fa-rocket"></i> PUBLISH
-          </button>
-          <button class="btn btn-more">
-            <i class="fas fa-ellipsis-h"></i>
-          </button>
-        </div>
+      <div class="course-desc bg-fade2">
+        <h5>
+          This Contest is about bla bla bla bla, bla bla This Contest is about bla bla bla bla, bla bla
+        </h5>
       </div>
     </div>
-  </section>
+    <div class="col-md-4 col-md-offset-1">
+      <div class="course-publish">
+        <button class="btn btn-publish">
+          <i class="fas fa-rocket"></i> PUBLISH
+        </button>
+        <button class="btn btn-more">
+          <i class="fas fa-ellipsis-h"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="one-line-det">
+    <div class="inner-item border-rw">
+      <img src="images/compare.png" width="30" alt="compare">
+      Default theme
+    </div>
+    <div class="inner-item border-rw">
+      <img src="images/compare.png" width="30" alt="compare2">
+      32 Players
+    </div>
+    <div class="inner-item border-rw">
+      <img src="images/compare.png" width="30" alt="compare3">
+      12 Questions
+    </div>
+    <div class="inner-item">
+      <img src="images/compare.png" width="30" alt="compare4">
+      4 Courses
+    </div>
+  </div>
+</section>
 
-  <section class="questions-list">
-    <div class="container">
-      <form class="form-inline search-form" role="form">
-        <div class="form-group has-feedback">
-          <input type="text" ng-model="searchQuestion" class="form-control" id="inputSuccess4">
-          <i class="fas fa-search"></i>
+<section class="questions-list">
+  <div class="container">
+    <form class="form-inline search-form">
+      <div class="form-group has-feedback">
+        <input type="text" ng-model="searchQuestion" class="form-control" id="inputSuccess4">
+        <i class="fas fa-search"></i>
+      </div>
+    </form>
+    <div class="cards-list m-top-20">
+      <div class="question-card row zer-mar"
+        ng-repeat="question in questions | filter:searchQuestionFilter track by $index"
+        ng-class="{'active': question.active}">
+        <div class="col-md-1 col-xs-2 question-no">
+          <h2 class="text-center">
+            Q.{{$index + 1}}
+          </h2>
+          <img src="images/rotate.png" width="55" class="center" alt="rotate">
         </div>
-      </form>
-      <div class="cards-list m-top-20">
-        <div class="question-card row zer-mar" ng-repeat="question in questions | filter:searchQuestionFilter track by $index" ng-class="{'active': question.active}">
-          <div class="col-md-1 col-xs-2 question-no">
-            <h2 class="text-center">
-              Q.{{$index + 1}}
-            </h2>
-            <img src="images/rotate.png" width="80%" class="center">
-          </div>
-          <div class="col-md-11 col-xs-10 question-details">
-            <h3>
-              {{question.title}}
-            </h3>
-            <div class="lower-card">
-              <div class="border-right">
-                {{question.Difficulty}}
-              </div>
-              <div>
-                {{question.Scores}} scores
-              </div>
+        <div class="col-md-11 col-xs-10 question-details">
+          <h3>
+            {{question.title}}
+          </h3>
+          <div class="lower-card">
+            <div class="border-right">
+              {{question.Difficulty}}
+            </div>
+            <div>
+              {{question.Scores}} scores
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
 
 <nav class="btns-container">
 
-  <a href="#" class="buttons" tooltip="Google+"></a>
+  <a href="#" class="buttons" tooltip="Icon1"></a>
 
-  <a href="#" class="buttons" tooltip="Twitter"></a>
+  <a href="#" class="buttons" tooltip="Icon2"></a>
 
-  <a href="#" class="buttons" tooltip="Facebook"></a>
+  <a href="#" class="buttons" tooltip="Icon3"></a>
+
+  <a href="#" class="buttons" tooltip="Icon4"></a>
 
   <a class="buttons" tooltip="Share" href="#"></a>
 
@@ -156,51 +161,56 @@
         </button>
       </div>
       <div class="modal-body">
-        <div>
-          <h3 class="text-center">Choose question type</h3>
-          <p class="text-center">Enjoy adding from variety of question types or even import from your question banks</p>
-        </div>
-        <div class="center m-top-20">
-          <div class="mcq-ques" ng-class="{'active':mcq}" ng-click="mcq = true; boolq=false">
-            <i class="fas fa-check-double center"></i>
-            <h4 class="text-center">MCQ</h4>
+        <section>
+          <div>
+            <h3 class="text-center">Choose question type</h3>
+            <p class="text-center">Enjoy adding from variety of question types or even import from your question banks
+            </p>
           </div>
-          <div class="bool-ques" ng-class="{'active':boolq}" ng-click="mcq = false; boolq=true">
-            <i class="fas fa-check-double center"></i>
-            <h4 class="text-center">True/False</h4>
+          <div class="center m-top-20">
+            <div class="mcq-ques" ng-class="{'active':mcq}" ng-click="mcq = true; boolq=false">
+              <i class="fas fa-check-double center"></i>
+              <h4 class="text-center">MCQ</h4>
+            </div>
+            <div class="bool-ques" ng-class="{'active':boolq}" ng-click="mcq = false; boolq=true">
+              <i class="fas fa-check-double center"></i>
+              <h4 class="text-center">True/False</h4>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div class="question-part">
-          <form class="question-form" role="form" ng-show="mcq">
+        <section class="question-part">
+          <form class="question-form" ng-show="mcq">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Question" ng-model="questionmcq.title" id="inputSuccess4">
+              <input type="text" class="form-control" placeholder="Question" ng-model="questionmcq.title" id="mcqtitle">
             </div>
             <div class="form-group choices">
               <p>Choices</p>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="choice" id="choice1" value="one" checked>
                 <label class="form-check-label" for="choice1">
-                    <input type="text" class="form-control" placeholder="First Choice" id="fst-choice">
+                  <input type="text" class="form-control" placeholder="First Choice" ng-model="choice1">
                 </label>
               </div>
               <div class="form-check margin-top10">
                 <input class="form-check-input" type="radio" name="choice" id="choice2" value="two">
                 <label class="form-check-label" for="choice2">
-                  <input type="text" class="form-control" placeholder="Second Choice" id="snd-choice">
+                  <input type="text" class="form-control" placeholder="Second Choice" ng-model="choice2">
                 </label>
               </div>
             </div>
             <div class="form-group">
               <p>Hard</p>
               <div class="form-check">
-                <input class="form-check-input" type="radio" ng-model="questionmcq.Difficulty" name="Questiondiff" id="Questiondiff1" value="Hard">
+                <input class="form-check-input" type="radio" ng-model="questionmcq.Difficulty" name="Questiondiff"
+                  id="Questiondiff1" value="Hard">
                 <label class="form-check-label" for="Questiondiff1">
                   Hard
                 </label>
               </div>
               <div class="form-check margin-left20">
-                <input class="form-check-input" type="radio" ng-model="questionmcq.Difficulty" name="Questiondiff" id="Questiondiff2" value="Easy">
+                <input class="form-check-input" type="radio" ng-model="questionmcq.Difficulty" name="Questiondiff"
+                  id="Questiondiff2" value="Easy">
                 <label class="form-check-label" for="Questiondiff2">
                   Easy
                 </label>
@@ -208,9 +218,10 @@
             </div>
           </form>
 
-          <form class="question-form" role="form" ng-show="boolq">
+          <form class="question-form" ng-show="boolq">
             <div class="form-group">
-              <input type="text" class="form-control" ng-model="questionbool.title" placeholder="Question" id="inputSuccess4">
+              <input type="text" class="form-control" ng-model="questionbool.title" placeholder="Question"
+                id="booltitle">
             </div>
             <div class="form-group answers m-top-20">
               <p>Answers</p>
@@ -228,7 +239,7 @@
               </div>
             </div>
           </form>
-        </div>
+        </section>
 
       </div>
       <div class="modal-footer">
