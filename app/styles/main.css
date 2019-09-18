@@ -356,7 +356,7 @@ body{
   color:#6d2a69;
   border: 1px solid gray;
   width: 150px;
-  height: 120px;
+  height: 100px;
   display: inline-block;
   margin-right: 20px;
   cursor: pointer;
@@ -376,7 +376,7 @@ body{
   color: white;
 }
 .question-form{
-  padding-top: 50px;
+  padding-top: 10px;
   padding-right: 100px;
   padding-left: 100px;
 }
@@ -479,31 +479,13 @@ body{
     -webkit-transform: scale(1);
     transform: scale(1);
 }
+.modal-body{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-
-  .questions-list .cards-list .question-card.active {
-    transform: scale(1.02);
-  }
-
-  .navbar-nav > li > a {
-    padding-right: 5px;
-    padding-left: 5px;
-  }
-
-  .btn.btn-pink{
-    padding: 10px;
-  }
-
-  .course-title, .course-desc{
-    padding-left: 100px;
-  }
-
-  .one-line-det{
-    margin-top: 10px;
-  }
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -521,6 +503,26 @@ body{
   }
 }
 
-@media screen and (min-width: 768px){
-  
+@media only screen and (max-width: 768px)  {
+  .questions-list .cards-list .question-card.active {
+    transform: scale(1.02);
+  }
+
+  .navbar-nav > li > a {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .btn.btn-pink{
+    padding: 10px;
+    margin-left: 10px;
+  }
+
+  .course-title, .course-desc{
+    padding-left: 100px;
+  }
+
+  .one-line-det{
+    margin-top: 10px;
+  }
 }
